@@ -1,0 +1,9 @@
+CreateServiceA
+VirtualFree
+ExitProcess
+VirtualProtect
+LoadLibraryA
+VirtualAlloc
+GetProcAddress
+exit
+InternetOpenA

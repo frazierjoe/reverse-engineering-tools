@@ -7,7 +7,9 @@ DATA="data-import-checker/data.txt"
 read FILE
 echo "Results"
 while IFS= read -r line; do
-	output=$(grep -i "^$line" $DATA)
+	stripped=$(echo ${line%?})
+	
+	output=$(grep -i "^$stripped" $DATA)
 	if [ -n "${output}" ]
 	then
 		echo -e '\t' $output

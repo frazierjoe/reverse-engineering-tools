@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Enter a file containing a list of imports to check"
+
+DATA="data-import-checker/data.txt"
+
+read FILE
+echo "Results"
+while IFS= read -r line; do
+	output=$(grep -i "^$line" $DATA)
+	if [ -n "${output}" ]
+	then
+		echo -e '\t' $output
+	fi
+done < $FILE
